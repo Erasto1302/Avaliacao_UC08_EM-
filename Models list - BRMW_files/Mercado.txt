@@ -3,7 +3,7 @@ USE Mercado;
 
 
 CREATE TABLE Produtos (
-	idProduto INT NOT NULL AUTO_INCREMENT,
+	idProdutos INT NOT NULL AUTO_INCREMENT,
 	nome VARCHAR(45) NOT NULL,	
 	quantidade INT NOT NULL,
 	valor_unitario FLOAT NOT NULL,
@@ -11,11 +11,11 @@ CREATE TABLE Produtos (
  );
 
 
-CREATE TABLE Venda (
-	idVenda INT NOT NULL AUTO_INCREMENT,
+CREATE TABLE Vendas (
+	idVendas INT NOT NULL AUTO_INCREMENT,
 	data_venda DATETIME NOT NULL,
 	valor_total FLOAT NOT NULL,
-	PRIMARY KEY(idVenda)
+	PRIMARY KEY(idVendas)
 );
 
 CREATE TABLE Itens_vendidos (
@@ -23,9 +23,9 @@ CREATE TABLE Itens_vendidos (
 	quantidade INT NOT NULL,
 	valor_venda FLOAT NOT NULL,
 	fk_idProduto INT NOT NULL,
-	fk_idVenda INT NOT NULL,
+	fk_idVendas INT NOT NULL,
 	PRIMARY KEY (idItens_vendidos),
-	FOREIGN KEY (Fk_idProduto) REFERENCES CLiente (idProduto),
-	FOREIGN KEY (Fk_idVenda) REFERENCES Servico (idVenda)
+	FOREIGN KEY (Fk_idProdutos) REFERENCES Produtos (idProdutos),
+	FOREIGN KEY (Fk_idVendas) REFERENCES Vendas (idVendas)
 );
 
