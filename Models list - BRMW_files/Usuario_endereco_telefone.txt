@@ -1,0 +1,44 @@
+CREATE DATABASE Usuario_endereco_telefone; 
+USE Usuario_endereço_telefone;   
+
+
+CREATE TABLE Pessoa (
+	idPessoa INT NOT NULL AUTO_INCREMENT,
+	cpf INT NOT NULL,
+	nome VARCHAR(45) NOT NULL,	
+	dataNascimento DATE NOT NULL,
+	sexo Char(1) NOT NULL,
+	PRIMARY KEY(idPessoa)
+ );
+
+
+CREATE TABLE Telefone (
+	idTelefone INT NOT NULL AUTO_INCREMENT,
+	numero INT NOT NULL,
+	operadora INT NOT NULL,
+	ddd INT NOT NULL,
+	PRIMARY KEY(idTelefone)
+);
+
+CREATE TABLE Endereco (
+	idEndereco INT NOT NULL AUTO_INCREMENT,
+	logradouro VARCHAR(65) NOT NULL,
+	bairro CHAR(45) NOT NULL,
+	cep INT NOT NULL,
+	cidade VARCHAR(65) NOT NULL,
+	estado VARCHAR(2) NOT NULL,
+	complemento VARCHAR(100) NOT NULL, 
+	fk_idPessoa INT NOT NULL,
+	fk_idEndereco INT NOT NULL,
+	PRIMARY KEY (idEndereco),
+	FOREIGN KEY (Fk_idPessoa) REFERENCES Pessoa (idPessoa),
+	FOREIGN KEY (Fk_idEndereco) REFERENCES Servico (idEndereco)
+);
+
+
+
+
+drop table Cliente;
+
+
+ 
