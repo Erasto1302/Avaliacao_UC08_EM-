@@ -26,9 +26,9 @@ CREATE TABLE Ocorrencia (
 	imagem    VARCHAR(255) NOT NULL,
 	descricao VARCHAR(100) NOT NULL,
 	fk_idUsuario INT NOT NULL,
-	fk_idOng INT NOT NULL,
+	fk_idOng     INT NOT NULL,
 	PRIMARY KEY (idOcorrencia),
 	FOREIGN KEY (Fk_idUsuario) REFERENCES Usuario (idUsuario),
-	FOREIGN KEY (Fk_iOng) REFERENCES Ong (idOng)
+	FOREIGN KEY (Fk_idOng) REFERENCES Ong (idOng)
 );
 
