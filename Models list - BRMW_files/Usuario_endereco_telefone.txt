@@ -35,10 +35,3 @@ CREATE TABLE Endereco (
 	FOREIGN KEY (Fk_idEndereco) REFERENCES Servico (idEndereco)
 );
 
-
-
-
-drop table Cliente;
-
-
- 
