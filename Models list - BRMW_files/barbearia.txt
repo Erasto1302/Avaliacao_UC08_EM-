@@ -1,5 +1,5 @@
-CREATE DATABASE ClienteS; 
-USE Clientes; 
+CREATE DATABASE Barbearia; 
+USE Barbearia; 
 
 CREATE TABLE Clientes (
 	idClientes INT NOT NULL AUTO_INCREMENT,
