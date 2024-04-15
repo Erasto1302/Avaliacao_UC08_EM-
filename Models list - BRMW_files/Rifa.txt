@@ -6,7 +6,7 @@ CREATE TABLE Usuario (
 	nome VARCHAR(45) NOT NULL,	
 	PRIMARY KEY(idUsuario),
 	fk_idRifa INT NOT NULL,
-	FOREIGN KEY (Fk_idRifa) REFERENCES Rifa (id_Rifa),
+	FOREIGN KEY (Fk_idRifa) REFERENCES Rifa (id_Rifa)
 	
  );
 
@@ -19,7 +19,7 @@ CREATE TABLE Rifa (
 	valor_numero FLOAT NOT NULL,
 	PRIMARY KEY(idRifa),
 	fk_idVendas_rifa INT NOT NULL,
-	FOREIGN KEY (Fk_idVendas_rifa) REFERENCES Vendas_rifa (idVendas_rifa),
+	FOREIGN KEY (Fk_idVendas_rifa) REFERENCES Vendas_rifa (idVendas_rifa)
 );
 
 CREATE TABLE Vendas_rifa (
@@ -29,16 +29,15 @@ CREATE TABLE Vendas_rifa (
 	data		DATETIME    NOT NULL,
 	wathsapp	   INT	    NOT NULL,
 	quantidade_vendida INT 	    NOT NULL,
-	valor_total        FLOAT    NOT NULLL,
-	PRIMARY KEY(idVendas_rifa),
+	valor_total        FLOAT    NOT NULL,
+	PRIMARY KEY(idVendas_rifa)
 	
 );
 
 CREATE TABLE Numeros_vendidos (
 	idNumeros_vendidos INT NOT NULL AUTO_INCREMENT,
-	numero_escolhido   INT NNOT NULL,
+	numero_escolhido   INT NOT NULL,
 	PRIMARY KEY (idNumeros_vendidos),
 	fk_idUsuario INT NOT NULL,
-	FOREIGN KEY (Fk_idUsuario) REFERENCES Usuario (idUsuario),
+	FOREIGN KEY (Fk_idUsuario) REFERENCES Usuario (idUsuario)
 );
-
